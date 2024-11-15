@@ -9,5 +9,4 @@ public class TrajectoryApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(TrajectoryApplication.class, args);
 	}
-
 }
