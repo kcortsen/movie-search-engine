@@ -1,10 +1,11 @@
 package com.example.searchengine.service;
 
-import com.example.searchengine.model.Movie;
+import com.example.searchengine.model.*;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
-import org.springframework.web.reactive.function.client.WebClientResponseException;
+
+import java.util.List;
 
 @Service
 public class MovieService {
@@ -19,16 +20,14 @@ public class MovieService {
         this.apiKey = apiKey;
     }
 
-    public Movie getSearchedMovie(String title) {
-        System.out.println("API Key: " + apiKey);
-
+    public MovieSearchResponse getSearchedMovies(String title) {
         return webClient.get()
                 .uri(uriBuilder -> uriBuilder
                         .queryParam("apikey", apiKey)
-                        .queryParam("t", title)
+                        .queryParam("s", title)
                         .build())
                 .retrieve()
-                .bodyToMono(Movie.class)
+                .bodyToMono(MovieSearchResponse.class)
                 .block();
     }
 }

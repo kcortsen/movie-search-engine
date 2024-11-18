@@ -2,6 +2,8 @@ package com.example.searchengine.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.List;
+
 
 public class Movie {
 
@@ -18,6 +20,8 @@ public class Movie {
     private String type;
 
 
+
+    // Getters and Setters
     public String getTitle() {
         return title;
     }
@@ -49,6 +53,5 @@ public class Movie {
     public void setType(String type) {
         this.type = type;
     }
-
 }
 
