@@ -1,11 +1,17 @@
 package com.example.searchengine.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
 import java.util.List;
 
-
+@Entity
 public class Movie {
+
+    @Id
+    @JsonProperty("imdbID")
+    private String imdbID;
 
     @JsonProperty("Title")
     private String title;
@@ -13,15 +19,10 @@ public class Movie {
     @JsonProperty("Year")
     private String year;
 
-    @JsonProperty("imdbID")
-    private String imdbID;
-
     @JsonProperty("Type")
     private String type;
 
 
-
-    // Getters and Setters
     public String getTitle() {
         return title;
     }

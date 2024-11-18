@@ -15,7 +15,7 @@ public class MovieSearchResponse {
     @JsonProperty("Response")
     private String response;
 
-    // Getters and Setters
+
     public List<Movie> getSearch() {
         return search;
     }
